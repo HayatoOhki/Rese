@@ -24,16 +24,16 @@
                 <ul class="nav__list">
                     <li><a href="/" class="nav__item">Home</a></li>
                     @if (Auth::check())
-                    <li>
-                        <form action="/logout" method="POST">
-                            @csrf
-                            <button class="nav__item" type="submit">Logout</button>
-                        </form>
-                    </li>
-                    <li><a href="" class="nav__item">Mypage</a></li>
+                        <li>
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button class="nav__item" type="submit">Logout</button>
+                            </form>
+                        </li>
+                        <li><a href="/mypage" class="nav__item">Mypage</a></li>
                     @else
-                    <li><a href="/register" class="nav__item">Registration</a></li>
-                    <li><a href="/login" class="nav__item">Login</a></li>
+                        <li><a href="/register" class="nav__item">Registration</a></li>
+                        <li><a href="/login" class="nav__item">Login</a></li>
                     @endif
                 </ul>
             </nav>

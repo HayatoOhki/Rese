@@ -2,7 +2,7 @@
 
 
 @section('css')
-<!-- loginと同様の為代用 -->
+<!-- 同様の為併用 -->
 <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
 @endsection
 

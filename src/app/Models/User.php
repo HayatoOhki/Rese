@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -41,4 +41,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function likes() {
+        return $this->hasMany(Like::class);
+    }
+
+    public function like_shops() {
+        return $this->belongsToMany(Shop::class, 'likes', 'user_id', 'shop_id');
+    }
+
+    public function is_like($shop_id) {
+        return $this->likes()->where('shop_id', $shop_id)->exists();
+    }
 }

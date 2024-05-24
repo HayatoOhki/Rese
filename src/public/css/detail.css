@@ -1,0 +1,191 @@
+/***** shop__detail *****/
+.shop__detail {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    width: 90%;
+}
+
+.shop__title {
+    display: flex;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    
+    h3 {
+        margin: 0 20px;
+    }
+}
+
+.back__button {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #666;
+    padding: auto;
+    text-decoration: none;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.shop__image {
+    img {
+        width: 100%;
+    }
+}
+
+.shop__tag {
+    margin: 20px 0;
+    
+    span::before {
+        content: "#";
+    }
+}
+
+/***** form共通部分 *****/
+.reservation__form,
+.evaluation__form {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    width: 90%;
+    background-color: #305dff;
+    height: 80vh;
+    border-radius: 5px;
+    position: relative;
+}
+
+.reservation__form--title,
+.evaluation__form--title {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 5%;
+}
+
+.reservation__form--confirmation,
+.evaluation__form--confirmation {
+    background-color: #4d7fff;
+    margin: 0 5%;
+    border-radius: 5px;
+    padding: 20px;
+    color: #fff;
+}
+
+.reservation__form--confirmation-header,
+.evaluation__form--confirmation-header {
+    text-align: left;
+}
+
+.reservation__form--confirmation-text,
+#reservation__form--confirmation-date,
+#reservation__form--confirmation-time,
+#reservation__form--confirmation-number,
+.evaluation__form--confirmation-text,
+#evaluation__form--confirmation-date,
+#evaluation__form--confirmation-time,
+#evaluation__form--confirmation-number {
+    text-align: left;
+    padding: 5px 50px;
+}
+
+.reservation__form--button,
+.evaluation__form--button {
+    background-color: #0538ff;
+    text-align: center;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.reservation__form--button-submit,
+.evaluation__form--button-submit {
+    color: #fff;
+    background-color: #0538ff;
+    border: none;
+    border-radius: 0 0 5px 5px;
+    font-size: 15px;
+    width: 100%;
+    padding: 20px;
+}
+
+.error-message {
+    color: #ff0;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/***** form(reservationのみ) *****/
+.reservation__form--item {
+    display: flex;
+    flex-flow: column;
+    margin: 0 5%;
+}
+
+#reservation__form--input-date {
+    width: 20%;
+}
+
+#reservation__form--input-date,
+#reservation__form--select-time,
+#reservation__form--select-number {
+    font-size: 15px;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+/***** form(evaluationのみ) *****/
+.evaluation__form--subtitle {
+    color: #fff;
+    margin: 0 5%;
+    h4 {
+        margin-bottom: 0;
+    }
+}
+
+.evaluation__form--evaluation {
+    color: #FFC107;
+    font-size: 30px;
+    display: inline-block;
+    margin: 0 5%;
+}
+
+.evaluation__form--evaluation-input {
+    display: none;
+}
+
+.evaluation__form--evaluation label::before {
+    content: "\2606";
+}
+
+.evaluation__form--evaluation-input:checked~label::before {
+    content: "\2605";
+}
+
+.evaluation__form--comment {
+    margin: 0 5%;
+}
+
+.evaluation__form--comment-input {
+    height: 100px;
+    width: 90%;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .shop__detail {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+        width: 100%;
+    }
+    
+    .reservation__form,
+    .evaluation__form {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        width: 100%;
+    }
+    
+}

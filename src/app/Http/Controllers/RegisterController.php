@@ -10,7 +10,7 @@ use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\RegisterViewResponse;
 
-class RegisteredUserController extends Controller
+class RegisterController extends Controller
 {
     /**
      * The guard implementation.

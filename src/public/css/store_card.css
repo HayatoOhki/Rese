@@ -1,0 +1,90 @@
+/***** store__card *****/
+.store__card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #666;
+    height: 300px;
+    text-align-last: left;
+}
+
+.store__card--image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.store__card--title {
+    margin-left: 10px;
+
+    h3 {
+        font-size: 20px;
+        margin: 15px;
+    }
+}
+
+.store__card--tag {
+    margin: 10px 25px;
+    font-size: 15px;
+    
+    span::before {
+        content: "#";
+    }
+}
+
+/***** 詳しく見るボタン *****/
+.store__card--button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail__button {
+    margin: 5px 25px;
+    height: 30px;
+    background-color: #305dff;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+}
+
+/***** お気に入り機能 *****/
+.like__button {
+    border: none;
+    background-color: #fff;
+    margin-right: 25px;
+}
+
+.like {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.like::before,
+.like::after {
+    content: "";
+    width: 50%;
+    height: 80%;
+    background: #eee;
+    border-radius: 25px 25px 0 0;
+    display: block;
+    position: absolute;
+}
+
+.like.clicked::before,
+.like.clicked::after {
+    background: #f00;
+}
+
+.like::before {
+    transform: rotate(-45deg);
+    left: 14%;
+}
+
+.like::after {
+    transform: rotate(45deg);
+    right: 14%;
+}

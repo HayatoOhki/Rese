@@ -23,7 +23,8 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(
-            RegisteredUserController::class
+            RegisteredUserController::class,
+            RegisterController::class
         );
     }
 
