@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class GenreSeeder extends Seeder
+class likeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        $SplFileObject = new \SplFileObject(__DIR__ . '/data/genres.csv');
+        $SplFileObject = new \SplFileObject(__DIR__ . '/data/likes.csv');
         $SplFileObject->setFlags(
             \SplFileObject::READ_CSV |
             \SplFileObject::READ_AHEAD |
@@ -28,10 +28,11 @@ class GenreSeeder extends Seeder
             }
 
             $params[] = [
-                'genre' => trim($row[0]),
+                'user_id' => trim($row[0]),
+                'shop_id' => trim($row[1]),
             ];
         }
 
-        DB::table('genres')->insert($params);
+        DB::table('likes')->insert($params);
     }
 }

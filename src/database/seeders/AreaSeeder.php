@@ -14,15 +14,15 @@ class AreaSeeder extends Seeder
      */
     public function run()
     {
-        $ShopSplFileObject = new \SplFileObject(__DIR__ . '/data/areas.csv');
-        $ShopSplFileObject->setFlags(
+        $SplFileObject = new \SplFileObject(__DIR__ . '/data/areas.csv');
+        $SplFileObject->setFlags(
             \SplFileObject::READ_CSV |
             \SplFileObject::READ_AHEAD |
             \SplFileObject::SKIP_EMPTY |
             \SplFileObject::DROP_NEW_LINE
         );
 
-        foreach ($ShopSplFileObject as $key => $row) {
+        foreach ($SplFileObject as $key => $row) {
             if ($key === 0) {
                 continue;
             }

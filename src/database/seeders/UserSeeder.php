@@ -19,15 +19,15 @@ class UserSeeder extends Seeder
         DB::table('users')->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        $ShopSplFileObject = new \SplFileObject(__DIR__ . '/data/users.csv');
-        $ShopSplFileObject->setFlags(
+        $SplFileObject = new \SplFileObject(__DIR__ . '/data/users.csv');
+        $SplFileObject->setFlags(
             \SplFileObject::READ_CSV |
             \SplFileObject::READ_AHEAD |
             \SplFileObject::SKIP_EMPTY |
             \SplFileObject::DROP_NEW_LINE
         );
 
-        foreach ($ShopSplFileObject as $key => $row) {
+        foreach ($SplFileObject as $key => $row) {
             if ($key === 0) {
                 continue;
             }
